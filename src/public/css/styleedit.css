@@ -1,0 +1,6 @@
+.form-table {
+    display: block;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}

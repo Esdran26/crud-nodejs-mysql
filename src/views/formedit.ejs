@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <% include partials/head.ejs %>
+    <link rel="stylesheet" href="/css/styleedit.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Administración Local con Código de Barras</h1>
+    </div>
+    <div class="form-table">
+        <div class="form-add">
+            <h2>Edita este Producto</h2>
+            <form action="/update/<%= data.id %>" method="post">
+                <input type="text" name="ref" id="ref" value="<%= data.ref %>" autofocus>
+                <input type="text" name="name" id="name" value="<%= data.name %>">
+                <input type="text" name="price" id="price" value="<%= data.price %>">
+                <input type="submit" value="Editar Producto">
+            </form>
+        </div>
+        </div>
+    </div>
+    <% include partials/footer.ejs %>
+</body>
+</html>

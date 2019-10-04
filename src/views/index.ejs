@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <% include partials/head.ejs %>
+</head>
+<body>
+    <div class="header">
+        <h1>Administración Local con Código de Barras</h1>
+    </div>
+    <div class="form-table">
+        <div class="form-add">
+            <h2>Ingrese un producto</h2>
+            <form action="/add" method="post">
+                <input type="text" name="ref" id="ref" placeholder="Referencia" autofocus>
+                <input type="text" name="name" id="name" placeholder="Nombre del Producto">
+                <input type="text" name="price" id="price" placeholder="Precio">
+                <input type="submit" value="Registrar Producto">
+            </form>
+        </div>
+        <div class="table">
+            <h2>Todos Nuestros Productos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Referencia</th>
+                        <th>Nombre del Producto</th>
+                        <th>Precio</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data) { %>
+                        <% for(let i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <td><%= (i + 1) %></td>
+                                <td><%= data[i].ref %></td>
+                                <td><%= data[i].name %></td>
+                                <td><%= data[i].price %></td>
+                                <td>
+                                    <a class="delete" href="/delete/<%= data[i].id %>">Eliminar</a>
+                                    <a class="update" href="/update/<%= data[i].id %>">Editar</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <% include partials/footer.ejs %>
+</body>
+</html>
