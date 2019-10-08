@@ -1,6 +1,26 @@
 .form-table {
     display: block;
     display: grid;
-    align-content: center;
-    justify-content: center;
+    grid-template-areas: "illustration-1 form-edit illustration-2";
+}
+.illustration-1 {
+    grid-area: "illustration-1";
+    background-image: url(../img/undraw_unlock_24mb.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    width: 450px;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+.form-add {
+    grid-area: "form-edit";
+    margin: 2rem;
+}
+.illustration-2 {
+    grid-area: "illustration-2";
+    background-image: url(../img/undraw_share_opinion_jpw0.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    width: 450px;
+    margin-top: 5rem;
 }

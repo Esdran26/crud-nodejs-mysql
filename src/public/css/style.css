@@ -9,9 +9,14 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-h1, h2, h3 {
+h1, h2, h3, text {
     font-family: 'Oxygen', sans-serif;
     text-align: center;
+}
+text[class="header"] {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: normal;
 }
 input, p, textarea {
     font-family: 'Roboto', sans-serif;
@@ -34,28 +39,26 @@ thead{
 tr:nth-child(even){
 	background-color: #ddd;
 }
-footer {
-    margin-top: 6.8rem;
-}
 
 /* CLases e Ids */
-.header, footer {
+.header {
     display: grid;
     background-color: #2c3e50;
     text-align: center;
     align-content: center;
     height: 60px;
 }
-.header h1, footer p {
+.header h1 {
     color: white;
 }
 .form-table {
     display: grid;
-    grid-template-areas: "form table";
+    grid-template-areas: "form current-table";
 }
 .form-add {
     grid-area: "form";
     margin: 2rem;
+    margin-left: 5rem;
     text-align: center;
     border: 1px solid gray;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -79,14 +82,25 @@ footer {
     box-shadow: 0px 15px 20px rgba(12, 36, 97, 0.4);
     color: #fff;
 }
+.current-table {
+    grid-area: "current-table";
+    background-image: url(../img/undraw_certificate_343v.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 490px;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: 2rem;
+}
 .table {
-    grid-area: "table";
     margin: 2rem;
     margin-top: 3rem;
 }
 .table h2 {
     margin: auto;
     margin-bottom: .5rem;
+    font-weight: normal;
+    font-size: 2rem;
 }
 a[class="delete"] {
     text-decoration: none;
@@ -108,4 +122,5 @@ a[class="update"]:hover {
     margin: 1rem;
     margin-left: 2rem;
     text-align: left;
+    font-weight: normal;
 }

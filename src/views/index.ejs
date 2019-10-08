@@ -4,9 +4,12 @@
     <% include partials/head.ejs %>
 </head>
 <body>
-    <div class="header">
-        <h1>Administración Local con Código de Barras</h1>
-    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#2c3e50" fill-opacity="1" d="M0,288L60,266.7C120,245,240,203,360,197.3C480,192,600,224,720,234.7C840,245,960,235,1080,202.7C1200,171,1320,117,1380,90.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        </path>
+        <text class="header" x="50%" y="30%" text-anchor="middle" alignment-baseline="middle" fill="#fff" style="font-family: Oxygen">Administración Local con Código de Barras</text>
+    </svg>
+    
     <div class="form-table">
         <div class="form-add">
             <h2>Ingrese un producto</h2>
@@ -17,7 +20,11 @@
                 <input type="submit" value="Registrar Producto">
             </form>
         </div>
-        <div class="table">
+        <div class="current-table">
+            
+        </div>
+    </div>
+    <div class="table">
             <h2>Todos Nuestros Productos</h2>
             <table>
                 <thead>
@@ -47,7 +54,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
     <% include partials/footer.ejs %>
 </body>
 </html>
