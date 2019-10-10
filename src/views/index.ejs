@@ -5,7 +5,7 @@
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#2c3e50" fill-opacity="1" d="M0,288L60,266.7C120,245,240,203,360,197.3C480,192,600,224,720,234.7C840,245,960,235,1080,202.7C1200,171,1320,117,1380,90.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        <path fill="#40407a" fill-opacity="1" d="M0,288L60,266.7C120,245,240,203,360,197.3C480,192,600,224,720,234.7C840,245,960,235,1080,202.7C1200,171,1320,117,1380,90.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
         </path>
         <text class="header" x="50%" y="30%" text-anchor="middle" alignment-baseline="middle" fill="#fff" style="font-family: Oxygen">Administración Local con Código de Barras</text>
     </svg>
@@ -17,11 +17,41 @@
                 <input type="text" name="ref" id="ref" placeholder="Referencia" autofocus>
                 <input type="text" name="name" id="name" placeholder="Nombre del Producto">
                 <input type="text" name="price" id="price" placeholder="Precio">
-                <input type="submit" value="Registrar Producto">
+                <input id="submit" type="submit" value="Registrar Producto">
             </form>
         </div>
         <div class="current-table">
-            
+            <div class="table-current">
+                <h2>Último Producto Agregado</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Referencia</th>
+                        <th>Nombre del Producto</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data) { %>
+                        <% if(data.length > 0) { %>
+                        
+                            <tr>
+                                <td><%= data.length %></td>
+                                <td><%= data[data.length - 1].ref %></td>
+                                <td><%= data[data.length - 1].name %></td>
+                                <td><%= data[data.length - 1].price %></td>
+                            </tr>
+                        <% } %>
+                        <% if(data.length <= 0) { %>
+                            <tr>
+                                <td class="empty-column" colspan="4">No se ha registrado ningún producto</td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+            </div>
         </div>
     </div>
     <div class="table">
@@ -38,6 +68,11 @@
                 </thead>
                 <tbody>
                     <% if(data) { %>
+                        <% if(data.length <= 0) { %>
+                            <tr>
+                                <td class="empty-column" colspan="5">No se ha registrado ningún producto</td>
+                            </tr>
+                        <% } %>
                         <% for(let i = 0; i < data.length; i++) { %>
                             <tr>
                                 <td><%= (i + 1) %></td>
@@ -55,5 +90,6 @@
             </table>
         </div>
     <% include partials/footer.ejs %>
+    <script src="/js/app.js"></script>
 </body>
 </html>

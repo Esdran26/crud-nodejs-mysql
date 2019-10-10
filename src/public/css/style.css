@@ -25,19 +25,21 @@ input, p, textarea {
 table{
 	background-color: white;
 	text-align: center;
-	border-collapse: collapse;
-    width: 100%;
+    border-collapse: collapse;
 }
 th, td{
-	padding: 15px;
+    padding: 15px;
+}
+td[class="empty-column"] {
+    color: #2c2c54;
 }
 thead{
 	background-color: #2c3e50;
-	border-bottom: solid 5px #0F362D;
+	border-bottom: solid 5px #40407a;
 	color: white;
 }
 tr:nth-child(even){
-	background-color: #ddd;
+    background-color: #bdc3c7;
 }
 
 /* CLases e Ids */
@@ -57,8 +59,7 @@ tr:nth-child(even){
 }
 .form-add {
     grid-area: "form";
-    margin: 2rem;
-    margin-left: 5rem;
+    margin: 2rem auto;
     text-align: center;
     border: 1px solid gray;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -83,27 +84,33 @@ tr:nth-child(even){
     color: #fff;
 }
 .current-table {
+    display: grid;
     grid-area: "current-table";
     background-image: url(../img/undraw_certificate_343v.svg);
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 490px;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: 2rem;
+    margin: 1rem auto;
+    align-content: center;
+    justify-content: center;
 }
 .table {
-    margin: 2rem;
-    margin-top: 3rem;
+    display: grid;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
 }
-.table h2 {
+.table h2, .current-table h2 {
     margin: auto;
     margin-bottom: .5rem;
     font-weight: normal;
     font-size: 2rem;
 }
+.current-table h2 {
+    background-color: rgba(236, 240, 241, 0.8);
+}
 a[class="delete"] {
     text-decoration: none;
+    margin-right: 2rem;
     color: #d63031;
     transition: all .3s ease-in-out
 }
